@@ -24,4 +24,4 @@ add_executable(${PROJECT_NAME}
         ${SOURCES}
         )
 
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} pthread mysql)
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} pthread mysqlclient)

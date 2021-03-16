@@ -1,6 +1,7 @@
 #include "mybench_worker.h"
 #include <thread>
 #include <chrono>
+#include <assert.h>
 #include "mybench_config.h"
 
 using SteadyClock = std::chrono::steady_clock;

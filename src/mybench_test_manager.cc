@@ -1,6 +1,8 @@
 #include "mybench_test.h"
 #include "mybench_config.h"
 #include "test/mybench_test_login.h"
+#include <string.h>
+#include <assert.h>
 
 Mybench_test_manager::Mybench_test_manager()
 {

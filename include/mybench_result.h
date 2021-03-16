@@ -1,7 +1,8 @@
 #ifndef MYBENCH_MYBENCH_RESULT_H
 #define MYBENCH_MYBENCH_RESULT_H
 
-#include "stdint.h"
+#include <stdint.h>
+#include <vector>
 #include "mybench_config.h"
 
 class Mybench_worker;
@@ -37,6 +38,6 @@ private:
     uint64_t	          m_test_count;
     uint64_t	          m_test_errors;
     uint64_t            m_test_qps;
-}
+};
 
 #endif //MYBENCH_MYBENCH_RESULT_H

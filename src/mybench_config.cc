@@ -1,23 +1,29 @@
 #include "mybench_config.h"
 #include <getopt.h>
 #include <iostream>
+#include <string.h>
 
 #define MAX_PARAM_WIDTH 512
 
+char* DEFAULT_DB_HOST     = const_cast<char*>("localhost");
+char* DEFAULT_DB_USER     = const_cast<char*>("test");
+char* DEFAULT_DB_PASSWORD = const_cast<char*>("test");
+char* DEFAULT_DB_SCHEMA   = const_cast<char*>("test");
+
 Mybench_config::Mybench_config()
-:m_help_info(""),
- m_db_type(DB_TYPE_UNKNOWN),
+:m_db_type(DB_TYPE_UNKNOWN),
  m_test_case(NULL),
- m_db_host("localhost"),
  m_db_port(3306),
- m_db_user("test"),
- m_db_password("test"),
- m_db_schema("test"),
  m_threads(1),
  m_time_sec(10),
  m_test_cmd(TEST_CMD_UNKNOWN),
  m_wait_tests_finish_interval_sec(10)
 {
+  m_db_host     = DEFAULT_DB_HOST;
+  m_db_user     = DEFAULT_DB_USER;
+  m_db_password = DEFAULT_DB_PASSWORD;
+  m_db_schema   = DEFAULT_DB_SCHEMA;
+
   m_help_info.append("Usage:\n");
   m_help_info.append("  mysbench [options]...\n\n");
   m_help_info.append("Commands implemented by most tests: prepare run cleanup help\n\n");

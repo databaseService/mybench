@@ -70,6 +70,7 @@ int Mybench_db_interface_mysql::close(void* conn)
 
 int Mybench_db_interface_mysql::closeall()
 {
+    int error = 0;
   MYSQL* local_conn= NULL;
 
   std::vector<MYSQL*>::iterator conn_iterator;
@@ -81,6 +82,7 @@ int Mybench_db_interface_mysql::closeall()
     local_conn= NULL;
   }
   m_conns.clear();
+  return error;
 }
 
 int Mybench_db_interface_mysql::close_internel(MYSQL* conn)

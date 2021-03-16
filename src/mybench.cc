@@ -53,12 +53,14 @@ int load_config(int argc, char** argv)
 
 int init_tests()
 {
+  int result = 0;
   printf("begin to init tests!\n");
   test_manager= new Mybench_test_manager();
   test_manager->set_config(config);
   //If mixed scenarios are not supported, it is not necessary to load all test cases
-  test_manager->initialize();
+  result = test_manager->initialize();
   printf("init tests finish!\n");
+  return result;
 }
 
 int init_threads()
